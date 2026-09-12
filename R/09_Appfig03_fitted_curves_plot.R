@@ -63,10 +63,6 @@ pdf(file = "Figure 2_Fitted_curves.pdf",width =7.4,height = 7.8)
 par(mfrow=c(4,4))
 par(mar=c(1.8,1,2.5,0.4),oma=c(0,1,0,0),xpd=TRUE)
 
-# jpeg(file = "Figure_2_Fitted_curves.jpg", width = 8, height = 7.8, units = "in", res = 300)
-# par(mfrow=c(4,4))
-# par(mar=c(1.8,1,2.5,0.4),oma=c(0,1,0,0),xpd=TRUE)
-
 # Cobovax (y_max = 5) 
 idx <- 1
 for(ds in cobovax_names) {
