@@ -64,7 +64,7 @@ names(optimal_models) <- cobovax_names
 optimal_models$pattinson <- find_optimal_model(ec50_shared$pattinson, ec50_idv$pattinson, dilution_pattinson)
 
 # Extract optimal logtiters from optimal models
-# Gold standard titers was extracted from individual model on full dilution series
+# Gold standard titers were extracted from individual model on full dilution series
 extract_optimal_logtiter <- function(logtiter_list, optimal_df, ec50_idv_values) {
   data.frame(
     logtiter_n2 = logtiter_list$n2[[optimal_df$optimal_comb[optimal_df$n_points == 2]]],
