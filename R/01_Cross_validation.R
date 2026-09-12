@@ -16,7 +16,7 @@ cv_all_models <- function(data, holdout_pct, n_iter, seed = 123) {
   samples <- unique(data$Sample)
   n_holdout <- max(1, round(length(samples) * holdout_pct))
   
-  # store results 
+  # Store results 
   results_combined <- data.frame()
   
   for (iter in 1:n_iter) {
@@ -25,7 +25,7 @@ cv_all_models <- function(data, holdout_pct, n_iter, seed = 123) {
     holdout_s <- sample(samples, n_holdout)
     train_s <- setdiff(samples, holdout_s)
     
-    # training models
+    # Training models
     train_3pl <- tryCatch({
       drm(OD ~ logDilution, curveid = Sample,
           pmodels = list(~1, ~1, ~Sample-1),
@@ -50,7 +50,7 @@ cv_all_models <- function(data, holdout_pct, n_iter, seed = 123) {
       cat("train_5pl failed:", e$message, "\n")
       NULL})
     
-    # training set failed for any model, skip this iteration
+    # Training set failed for any model, skip this iteration
     if (any(sapply(list(train_3pl, train_4pl, train_5pl), is.null))) next
     
     # Fixed parameters by each model
@@ -69,11 +69,12 @@ cv_all_models <- function(data, holdout_pct, n_iter, seed = 123) {
     d5 <- tc_5pl["d:(Intercept)"]
     f5 <- tc_5pl["f:(Intercept)"]
     
-    # testing samples
+    # Testing samples
     for (s in holdout_s) {
       s_data <- data[data$Sample == s, ]
       
-      # === try to calculate predicted and true titers ===
+      # Calculate predicted and gold-standard titers
+      
       # 3PL predicted titer
       pred_3pl <- tryCatch({
         m <- drm(OD ~ logDilution, fct = L.3(fixed = c(b3, d3, NA)), data = s_data)
@@ -110,7 +111,7 @@ cv_all_models <- function(data, holdout_pct, n_iter, seed = 123) {
         cat("gs_5pl failed:", e$message, "\n")
         NA} )
       
-      # for those all successfully calculated
+      # For those all successfully calculated
       if (!any(is.na(c(pred_3pl,pred_4pl,pred_5pl,gs_5pl)))) {
         results_combined <- rbind(results_combined, data.frame(
           iter = iter, 
@@ -169,10 +170,10 @@ for (ds in names(cv_results)) {
       )
       mse_by_iter <- mse_by_iter[!is.na(mse_by_iter)]
       
-      # Mean MSE
+      # Mean of MSEs
       mean_mse <- mean(mse_by_iter)
       
-      # Standard Error of MSE
+      # Standard Error of MSEs
       se_mse <- se(mse_by_iter)
       
       # 95% Confidence Interval
