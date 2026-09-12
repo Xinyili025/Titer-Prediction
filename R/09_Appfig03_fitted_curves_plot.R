@@ -1,4 +1,4 @@
-figure2_function <- function(pred,logdilution,dilution_vector,lines_color,text_x,text_y,text_title,x_panel,y_panel,text_panel,x_mse, y_mse,mse,y_max) {
+figure_ap3_function <- function(pred,logdilution,dilution_vector,lines_color,text_x,text_y,text_title,x_panel,y_panel,text_panel,x_mse, y_mse,mse,y_max) {
   cex_fig2 <- 0.5
   lwd_fig2 <- 0.6
   
@@ -67,7 +67,7 @@ par(mar=c(1.8,1,2.5,0.4),oma=c(0,1,0,0),xpd=TRUE)
 idx <- 1
 for(ds in cobovax_names) {
   for(i in 1:4) {
-    figure2_function(predicted_values[[ds]][[i]], 
+    figure_ap3_function(predicted_values[[ds]][[i]], 
                      logdilution_cobovax, dilution_cobovax,
                      data_colors[ds], 
                      "",
@@ -83,7 +83,7 @@ for(ds in cobovax_names) {
 
 # Pattinson (y_max = 2) 
 for(i in 1:4) {
-  figure2_function(predicted_values$pattinson[[i]], 
+  figure_ap3_function(predicted_values$pattinson[[i]], 
                    logdilution_pattinson, dilution_pattinson,
                    data_colors["pattinson"], 
                    "Reciprocal dilution",
