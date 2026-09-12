@@ -9,7 +9,7 @@ Four datasets were analyzed in this study. Three of these were derived from the 
 | Cobovax - Ancestral virus spike RBD | `Cobovax_Ancestral.csv` |
 | Cobovax - Omicron BA.2 full spike | `Cobovax_Omicron.csv` |
 | Cobovax - N-CTD | `Cobovax_N-CTD.csv` |
-| Pattinson et al. (2022) | `pattinson_et_al_2022.csv` |
+| Pattinson | `pattinson_et_al_2022.csv` |
 
 ## Methods (summary)
 
