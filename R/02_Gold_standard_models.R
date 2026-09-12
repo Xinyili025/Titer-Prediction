@@ -1,4 +1,4 @@
-source("R/00_setup.R")
+source("R/00_Setup.R")
 
 # Extract datasets with full dilution series from the sets_od list
 full_sets <- list(cobovax_ancestral=sets_od$cobovax_ancestral$n12[[1]],
