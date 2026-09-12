@@ -1,22 +1,13 @@
-# Reduced-dilution ELISA titer prediction
-
-This repository contains the analysis pipeline for estimating ELISA titers (EC50 / GMT) from a reduced number of dilution points, using shared-parameter dose–response models.
-
-Predicted titers are compared with a gold standard obtained from individual five-parameter logistic (5PL) curves fitted to the full dilution series.
+# Optimal Dilution Points for Reliable SARS-CoV-2 Antibody Titer Prediction
+In this project, we evaluated whether titers could be predicted by fitting a shared-parameter logistic model with sample-specific inflection points to a smaller set of selected dilution points.
 
 ## Datasets
-
-- Cobovax ancestral virus spike RBD
-- Cobovax Omicron BA.2 full spike
-- Cobovax N-CTD
-- Pattinson et al. (2022)
-
-Raw CSV files are not stored in this repository. If you have permission to use the data, place them in `data/raw/` as:
-
-- `Cobovax_Ancestral.csv`
-- `Cobovax_Omicron.csv`
-- `Cobovax_N-CTD.csv`
-- `pattinson_et_al_2022.csv`
+| Dataset | File |
+| :--- | :--- |
+| Cobovax - Ancestral virus spike RBD | `Cobovax_Ancestral.csv` |
+| Cobovax - Omicron BA.2 full spike | `Cobovax_Omicron.csv` |
+| Cobovax - N-CTD | `Cobovax_N-CTD.csv` |
+| Pattinson et al. (2022) | `pattinson_et_al_2022.csv` |
 
 ## Methods (summary)
 
