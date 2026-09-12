@@ -28,7 +28,6 @@ figure_ap3_function <- function(pred,logdilution,dilution_vector,lines_color,tex
   # Y-axis
   # axis with ticks
   line_y_fig2 <- -0.46
-  # line_y_fig2 <- -0.5
   axis(side = 2, at = 0:y_max, labels = FALSE, tick = TRUE, 
        line = line_y_fig2, lwd.ticks = lwd_fig2,lwd = lwd_fig2, tck = -0.045)
   # label
@@ -59,7 +58,7 @@ panel_position_fig2 <- c(4.3, -0.65, -0.65, -0.65,
                          0.1, -0.65, -0.65, -0.65, 
                          0.4, -0.65, -0.65, -0.65)
 
-pdf(file = "Figure 2_Fitted_curves.pdf",width =7.4,height = 7.8)
+pdf(file = "Figure_ap3_Fitted_curves.pdf",width =7.4,height = 7.8)
 par(mfrow=c(4,4))
 par(mar=c(1.8,1,2.5,0.4),oma=c(0,1,0,0),xpd=TRUE)
 
