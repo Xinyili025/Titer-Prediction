@@ -7,7 +7,6 @@ od_by_sample <- lapply(od, function(df) {
   split(df, df$Sample)
 })
 
-# Prediction
 # Create datasets for prediction
 prediction_data <- lapply(names_datasets, function(ds) {
   log_dil <- if(ds == "pattinson") logdilution_pattinson else logdilution_cobovax
