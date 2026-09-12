@@ -25,7 +25,6 @@ figure1_panel <- function(data_source, logdilution, dilution_vector,
   # X-axis
   idx <- seq(1, length(dilution_vector), by = 2) - 1
   line_x <- -0.385
-  # line_x <- -0.39
   axis(side = 1, at = range(logdilution), labels = FALSE, line = line_x, lwd = lwd_fig, lwd.ticks = 0)
   axis(side = 1, at = idx, labels = FALSE, tick = TRUE, line = line_x, tck = -0.045, lwd = 0, lwd.ticks = lwd_fig)
   axis(side = 1, at = idx + 1, labels = FALSE, tick = TRUE, line = line_x, tck = -0.025, lwd = 0, lwd.ticks = lwd_fig)
@@ -43,7 +42,7 @@ figure1_panel <- function(data_source, logdilution, dilution_vector,
   text(labels = text_panel, x = x_panel, y = y_panel, cex = 1.1, font = 2, xpd = NA)
 }
 
-pdf(file = "Figure_1_3PL.pdf", width = 8.1, height = 5.75)
+pdf(file = "Figure_1_5PL.pdf", width = 8.1, height = 5.75)
 par(mfrow = c(3, 4))
 par(mar = c(2.1, 2.5, 2, 0.4), oma = c(0, 0, 0, 0), xpd = TRUE)
 
