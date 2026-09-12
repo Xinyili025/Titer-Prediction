@@ -2,7 +2,7 @@
 In this project, we evaluated whether titers could be predicted by fitting a shared-parameter logistic model with sample-specific inflection points to a smaller set of selected dilution points.
 
 ## Datasets
-Four datasets were analyzed in this study. Three of these were derived from the Cobovax study, an open-label, randomized trial of COVID-19 booster vaccinations in late 2021 and early 2022 in Hong Kong. The fourth dataset was the Pattinson dataset, which comprised a community cohort study by the Marshfield Clinic Research Institute after the emergence of SARS-CoV-2.
+Four datasets were analyzed in this study. Three of these were derived from the Cobovax study, an open-label, randomized trial of COVID-19 booster vaccinations in late 2021 and early 2022 in Hong Kong [1]. The fourth dataset was the Pattinson dataset, which comprised a community cohort study by the Marshfield Clinic Research Institute after the emergence of SARS-CoV-2 [2].
 
 | Dataset | File |
 | :--- | :--- |
@@ -28,3 +28,9 @@ analysis/             main analysis scripts
 figures/scripts/      figure code
 output/               model objects and figures
 docs/                 extra notes
+```
+## References
+[1] Leung NHL, Cheng SMS, Cohen CA, Martín-Sánchez M, Au NYM, Luk LLH, et al. Comparative antibody and cell-mediated immune responses, reactogenicity, and efficacy of homologous and heterologous boosting with CoronaVac and BNT162b2 (Cobovax): an open-label, randomised trial. Lancet Microbe. 2023;4: e670–e682.
+
+[2] Pattinson D, Jester P, Guan L, Yamayoshi S, Chiba S, Presler R, et al. A Novel Method to Reduce ELISA Serial Dilution Assay Workload Applied to SARS-CoV-2 and Seasonal HCoVs. Viruses. 2022;14. doi:10.3390/v14030562
+
