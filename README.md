@@ -6,8 +6,8 @@ Four datasets were analyzed in this study. Three of these were derived from the 
 
 | Dataset | File |
 | :--- | :--- |
-| Cobovax - Ancestral virus spike RBD | `Cobovax_Ancestral.csv` |
-| Cobovax - Omicron BA.2 full spike | `Cobovax_Omicron.csv` |
+| Cobovax - Ancestral virus spike RBD | `Cobovax_Ancestral virus spike RBD.csv` |
+| Cobovax - Omicron BA.2 full spike | `Cobovax_Omicron BA.2 full spike.csv` |
 | Cobovax - N-CTD | `Cobovax_N-CTD.csv` |
 | Pattinson | `Pattinson.csv` |
 
