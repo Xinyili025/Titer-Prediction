@@ -1,6 +1,6 @@
 figure_ap3_function <- function(pred,logdilution,dilution_vector,lines_color,text_x,text_y,text_title,x_panel,y_panel,text_panel,x_mse, y_mse,mse,y_max) {
-  cex_fig2 <- 0.5
-  lwd_fig2 <- 0.6
+  cex_fig_ap3 <- 0.5
+  lwd_fig_ap3 <- 0.6
   
   plot(c(logdilution[1],logdilution[length(logdilution)]), c(0, y_max), bty="n",col="white",xlab = "",ylab = "",yaxt="n",xaxt="n",main="")
   
@@ -8,7 +8,7 @@ figure_ap3_function <- function(pred,logdilution,dilution_vector,lines_color,tex
   for(i in seq_along(samples)) {
     sample_data <- subset(pred, Sample == samples[i])
     lines(sample_data$logDilution, sample_data$OD_fit,
-          col=lines_color,lwd=lwd_fig2)
+          col=lines_color,lwd=lwd_fig_ap3)
   }
   
   # X-axis
@@ -16,24 +16,24 @@ figure_ap3_function <- function(pred,logdilution,dilution_vector,lines_color,tex
   idx <- seq(1, length(dilution_vector), by = 2)-1
   line_x_fig2 <- -0.385
   axis(side = 1, at = range(logdilution), labels = FALSE, 
-       line = line_x_fig2,lwd = lwd_fig2,lwd.ticks = 0)
-  axis(side=1,at=idx,labels=FALSE,tick = TRUE,line=line_x_fig2,tck=-0.045,lwd = 0,lwd.ticks = lwd_fig2) # longer ticks
-  axis(side=1,at=idx+1,labels=FALSE,tick = TRUE,line=line_x_fig2,tck=-0.025,lwd = 0,lwd.ticks = lwd_fig2) # shorter ticks
+       line = line_x_fig2,lwd = lwd_fig_ap3,lwd.ticks = 0)
+  axis(side=1,at=idx,labels=FALSE,tick = TRUE,line=line_x_fig2,tck=-0.045,lwd = 0,lwd.ticks = lwd_fig_ap3) # longer ticks
+  axis(side=1,at=idx+1,labels=FALSE,tick = TRUE,line=line_x_fig2,tck=-0.025,lwd = 0,lwd.ticks = lwd_fig_ap3) # shorter ticks
   
   # label
   axis(side=1,at=logdilution[idx+1],labels=dilution_vector[idx+1],tick = FALSE,line=-1.11,cex.axis = 0.69)
   # text
-  mtext(text_x, side = 1, line = 0.8,cex=cex_fig2)
+  mtext(text_x, side = 1, line = 0.8,cex=cex_fig_ap3)
   
   # Y-axis
   # axis with ticks
   line_y_fig2 <- -0.46
   axis(side = 2, at = 0:y_max, labels = FALSE, tick = TRUE, 
-       line = line_y_fig2, lwd.ticks = lwd_fig2,lwd = lwd_fig2, tck = -0.045)
+       line = line_y_fig2, lwd.ticks = lwd_fig_ap3,lwd = lwd_fig_ap3, tck = -0.045)
   # label
   axis(side=2,at=0:y_max,labels=c(0:y_max),tick = FALSE,line=-0.8,las=1,cex.axis=0.69)
   # text
-  mtext(text_y, side = 2, line =0.75,cex=cex_fig2)
+  mtext(text_y, side = 2, line =0.75,cex=cex_fig_ap3)
   
   # title
   title(main = text_title, line = 0.3, font=2,cex.main=0.85)
