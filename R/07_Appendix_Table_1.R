@@ -5,15 +5,15 @@ get_parameter_iqr_base <- function(model_list) {
     mod <- model_list[[ds_name]]
     if (is.null(mod)) next
     
-    # 1. all coefficients
+    # 1. All coefficients
     coeffs <- coef(mod)
     full_names <- names(coeffs)
     
-    # 2. split by parameters
+    # 2. Split by parameters
     split_names <- strsplit(full_names, ":")
     params <- sapply(split_names, function(x) x[1])
     
-    # 3. dataframe
+    # 3. Dataframe
     df_coef <- data.frame(
       Parameter = params,
       Value = as.numeric(coeffs),
@@ -32,7 +32,7 @@ get_parameter_iqr_base <- function(model_list) {
       q75 <- quantile(vals_clean, 0.75)
       iqr_val <- IQR(vals_clean)
       
-      # combine results
+      # Combine results
       res_row <- data.frame(
         Dataset = ds_name,
         Parameter = p,
