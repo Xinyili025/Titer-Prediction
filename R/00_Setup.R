@@ -105,4 +105,12 @@ sets_od <- c(
   ))
 )
 
+# Bounds of model fitting
+bounds_list <- list(
+  cobovax_ancestral = list(b = c(0, 5), c = c(-0.5,0.5), d = c(1.5, 5), e = c(-15,15), f = c(0, 5)),
+  cobovax_omicron   = list(b = c(0, 5), c = c(-0.5,0.5), d = c(1.5, 5), e = c(-15,15), f = c(0, 5)),
+  cobovax_nctd      = list(b = c(0, 5), c = c(-0.5,0.5), d = c(1.5, 5), e = c(-15,15),  f = c(0, 5)),
+  pattinson         = list(b = c(0, 10), c = c(-0.5,0.5), d = c(0.5, 3), e = c(-10,10), f = c(0, 5))
+)
+
 
