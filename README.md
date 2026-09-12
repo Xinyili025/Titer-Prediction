@@ -2,6 +2,8 @@
 In this project, we evaluated whether titers could be predicted by fitting a shared-parameter logistic model with sample-specific inflection points to a smaller set of selected dilution points.
 
 ## Datasets
+Four datasets were analyzed in this study. Three of these were derived from the Cobovax study, an open-label, randomized trial of COVID-19 booster vaccinations in late 2021 and early 2022 in Hong Kong. The fourth dataset was the Pattinson dataset, which comprised a community cohort study by the Marshfield Clinic Research Institute after the emergence of SARS-CoV-2.
+
 | Dataset | File |
 | :--- | :--- |
 | Cobovax - Ancestral virus spike RBD | `Cobovax_Ancestral.csv` |
