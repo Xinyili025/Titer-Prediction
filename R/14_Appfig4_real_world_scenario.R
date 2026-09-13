@@ -59,7 +59,7 @@ for (iter in 1:n_iter) {
   )
 }
 
-# 3-Point combination
+# 3-Point combinations
 n_points_list <- c("n3")
 all_comb_names <- list(
   n3 = names(sets_od$pattinson$n3)
