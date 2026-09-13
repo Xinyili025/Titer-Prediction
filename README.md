@@ -12,23 +12,17 @@ Four datasets were analyzed in this study. Three of these were derived from the 
 | Pattinson | `Pattinson.csv` |
 
 ## Methods (summary)
+- Cross-validation was used to select the optimal model for each dataset.
+- All candidate reduced-point combinations were evaluated. The combination that yielded the lowest mean squared error (MSE) between predicted titers and the gold-standard titers was selected as optimal.
+- Predictive accuracy for each optimal combination was further evaluated by calculating the ratio of predicted titers to gold-standard titers.
+- Assay-capped scenario: A limited total of 120 assays was allocated across different strategies (e.g., 60 samples × 2 points, 40 × 3, 30 × 4, 24 × 5).
+- Real-world scenario: A pilot subset of 50 samples was randomly selected as the training set, and the remaining samples were used as the test set.
 
-- Dilutions are log-transformed before model fitting.
-- Candidate models: 3PL, 4PL, and 5PL. Shared parameters (slope and asymptotes; asymmetry for 5PL) are estimated across samples; only the titer parameter varies by sample.
-- Model family is selected by cross-validation against the 5PL gold standard.
-- For 2–5 dilution points, all combinations are evaluated; the combination with the lowest MSE versus the gold standard is retained.
-- Additional analyses include a fixed assay budget (120 wells) and a train/test “real-world” split for combination selection.
+## How to run
+1. Unzip or clone this repository.
+2. Open `run_all.R` and set `setwd()` to your working directory.
+3. Run `run_all.R` to reproduce the analyses and generate figures.
 
-## Repository layout
-
-```text
-data/raw/             local raw CSVs (not tracked)
-R/                    helper functions
-analysis/             main analysis scripts
-figures/scripts/      figure code
-output/               model objects and figures
-docs/                 extra notes
-```
 ## References
 [1] Leung NHL, Cheng SMS, Cohen CA, Martín-Sánchez M, Au NYM, Luk LLH, et al. Comparative antibody and cell-mediated immune responses, reactogenicity, and efficacy of homologous and heterologous boosting with CoronaVac and BNT162b2 (Cobovax): an open-label, randomised trial. Lancet Microbe. 2023;4: e670–e682.
 
