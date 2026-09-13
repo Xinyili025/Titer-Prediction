@@ -16,7 +16,7 @@ Four datasets were analyzed in this study. Three of these were derived from the 
 - All candidate reduced-point combinations were evaluated. The combination that yielded the lowest mean squared error (MSE) between predicted titers and the gold-standard titers was selected as optimal.
 - Predictive accuracy for each optimal combination was further evaluated by calculating the ratio of predicted titers to gold-standard titers.
 - Assay-capped scenario (for the Pattinson dataset): A limited total of 120 assays was allocated across different strategies (e.g., 60 samples × 2 points, 40 × 3, 30 × 4, 24 × 5). Predicted geometric mean titer (GMT) and its 95% confidence interval were calculated for each strategy for each iteration and compared to the gold-standard GMT.
-- Real-world scenario (for the Pattinson dataset): A pilot subset of 50 samples was randomly selected as the training set, and the remaining samples were used as the test set. Predicted geometric mean titer (GMT) and its 95% confidence interval were calculated for the 3-point strategy for each iteration and compared to the gold-standard GMT.
+- Real-world scenario (for the Pattinson dataset): A pilot subset of 50 samples was randomly selected as the training set, and the remaining samples were used as the test set. Predicted GMT and its 95% confidence interval were calculated for the 3-point strategy for each iteration and compared to the gold-standard GMT.
 
 ## How to run
 1. Unzip or clone this repository.
