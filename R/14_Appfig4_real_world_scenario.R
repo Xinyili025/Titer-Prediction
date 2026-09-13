@@ -1,11 +1,6 @@
 # Gold-standard log titers
 ec50_idv_pt <- ec50_idv$pattinson
 
-# parallel
-library(parallel)
-library(foreach)
-library(doSNOW)
-
 n_cores <- 10
 cl <- makeCluster(n_cores)
 registerDoSNOW(cl)
