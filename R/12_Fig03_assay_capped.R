@@ -1,18 +1,24 @@
-# Objective: Compare different dilution strategies under a fixed total of 120 assays
+# Fixed 120 assays on Pattinson
 # Trade-off: More samples × fewer points  vs  fewer samples × more points
 set.seed(123)
 
-# Number of resamples per strategy within each subset
+# Pattinson dataset
+samples_pattinson <- unique(pattinson$Sample)
+
+gs_it <- ec50_idv$pattinson
+gs_logGMT <- mean(gs_it,na.rm = TRUE)
+gs_GMT <- original_dilutions_pattinson(mean(gs_it,na.rm = TRUE))
+
+# How many random subsets to draw per strategy
 n_resample <- 100
 
-# Strategy design (samples × points = 120)
 # n2: 60×2, n3: 40×3, n4: 30×4, n5: 24×5
 no_points <- 2:5
 strategy_n_samples <- c(60, 40, 30, 24)
 strategies <- paste0("n",2:5)
 iter_names <- paste0("iter_", 1:n_resample)
 
-# Store predicted GMTs
+# GMT and its SE
 all_logGMT <- list(
   n2 = data.frame(logGMT = rep(NA, n_resample), log_se = rep(NA, n_resample)),
   n3 = data.frame(logGMT = rep(NA, n_resample), log_se = rep(NA, n_resample)),
@@ -59,9 +65,6 @@ for(i in seq_along(strategies)) {
   }
 }
 
-# save(all_logGMT,file = "all_logGMT.RData")
-# load("all_logGMT.RData")
-
 logGMT_fixed_assays_individual <- list(
   logGMT = data.frame(lapply(all_logGMT, function(x) x$logGMT)),
   ci_lower = data.frame(lapply(all_logGMT, function(x) x$logGMT - 1.96 * x$log_se)),
@@ -73,4 +76,5 @@ names(logGMT_fixed_assays_individual$logGMT) <- names(all_logGMT)
 names(logGMT_fixed_assays_individual$ci_lower) <- names(all_logGMT)
 names(logGMT_fixed_assays_individual$ci_upper) <- names(all_logGMT)
 
-mse_fixed_assays <- round(sapply(logGMT_fixed_assays_individual$logGMT, mse, true = true_logGMT),4)
+# Mse
+mse_fixed_assays <- round(sapply(logGMT_fixed_assays_individual$logGMT, mse, true = gs_logGMT),4)
