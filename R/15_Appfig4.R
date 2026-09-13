@@ -89,7 +89,6 @@ boxplot(rw_training$logGMT, at = 0.65,boxwex = 0.4,
         frame=FALSE, add=TRUE, col=alpha(dp_colors["n3"], 0.5),
         outline=FALSE, whisklty=1, medlwd=1.75)
 
-# Testing point
 x_pos <- jitter(rep(1.35, n_iter), amount = 0.1)
 
 points(x_pos, rw_testing$logGMT[[1]], pch = 16, col = alpha(dp_colors["n3"], 0.6), cex = 0.5)
@@ -118,4 +117,5 @@ text(x = 1.5, y = log_dilutions_pattinson(1200),
      labels = rw_testing_mse, cex = 1)
 
 text(-0.65,log_dilutions_pattinson(1280)+0.3,labels = "B",font = 2,xpd=NA,cex = 1.2)
+
 dev.off()
