@@ -4,7 +4,6 @@ library(drc)
 library(car)
 library(scales)
 library(writexl)
-library(here)
 library(parallel)
 library(foreach)
 library(doSNOW)
@@ -13,10 +12,10 @@ library(doSNOW)
 set.seed(123)
 
 # Import data
-cobovax_ancestral <- read.csv(here("data", "Cobovax_Ancestral virus spike RBD.csv"), header = TRUE)
-cobovax_omicron   <- read.csv(here("data", "Cobovax_Omicron BA.2 full spike.csv"), header = TRUE)
-cobovax_nctd      <- read.csv(here("data", "Cobovax_N-CTD.csv"), header = TRUE)
-pattinson         <- read.csv(here("data", "pattinson.csv"), header = TRUE)
+cobovax_ancestral <- read.csv("data/Cobovax_Ancestral virus spike RBD.csv", header = TRUE)
+cobovax_omicron   <- read.csv("data/Cobovax_Omicron BA.2 full spike.csv", header = TRUE)
+cobovax_nctd      <- read.csv("data/Cobovax_N-CTD.csv", header = TRUE)
+pattinson         <- read.csv("data/Pattinson.csv", header = TRUE)
 
 # Names of datasets
 cobovax_names <- c("cobovax_ancestral", "cobovax_omicron", "cobovax_nctd")
