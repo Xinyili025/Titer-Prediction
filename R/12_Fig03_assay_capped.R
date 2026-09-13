@@ -1,4 +1,4 @@
-# Fixed 120 assays on Pattinson
+# Fixed 120 assays on the Pattinson dataset
 # Trade-off: More samples × fewer points  vs  fewer samples × more points
 set.seed(123)
 
