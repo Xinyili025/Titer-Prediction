@@ -1,11 +1,14 @@
+set.seed(123)
+
 # Gold-standard log titers
 ec50_idv_pt <- ec50_idv$pattinson
 
+# Start 10 worker R processes for foreach
 n_cores <- 10
 cl <- makeCluster(n_cores)
 registerDoSNOW(cl)
 
-# 3PL shared model
+# 3pl shared-parameter model
 fit_shared_3pl <- function(data, bounds = bounds_list$pattinson) {
   
   samples <- unique(data$Sample)
@@ -41,13 +44,10 @@ fit_shared_3pl <- function(data, bounds = bounds_list$pattinson) {
   return(ec50)
 }
 
-# Set parameters
-set.seed(123)
 n_iter <- 100
-
 samples_pattinson <- unique(pattinson$Sample)
-
 n_train <- 50
+
 # Pre-generate all 100 data splits (store both train and test samples)
 all_splits <- list()
 for (iter in 1:n_iter) {
@@ -59,12 +59,12 @@ for (iter in 1:n_iter) {
   )
 }
 
+# 3-Point combination
 n_points_list <- c("n3")
 all_comb_names <- list(
   n3 = names(sets_od$pattinson$n3)
 )
 
-# Containers for storing results
 all_results <- list()
 
 # Main Loop
@@ -110,9 +110,9 @@ for (np in n_points_list) {
                             test_pt <- od$pattinson[od$pattinson$Sample %in% test_samples, ]
                             
                             # ---- Training set: individual 5PL (Gold Standard) ----
-                            ec50_train_true <- ec50_idv_pt[train_samples]
+                            ec50_train_gs <- ec50_idv_pt[train_samples]
                             
-                            if (all(is.na(ec50_train_true))) {
+                            if (all(is.na(ec50_train_gs))) {
                               return(res)
                             }
                             
@@ -125,12 +125,12 @@ for (np in n_points_list) {
                             
                             # ---- Fit 3PL shared model ----
                             ec50_train_pred <- lapply(combo_train, fit_shared_3pl)
-                            ec50_train_pred <- lapply(ec50_train_pred, function(x) x[names(ec50_train_true)])
+                            ec50_train_pred <- lapply(ec50_train_pred, function(x) x[names(ec50_train_gs)])
                             
-                            # ---- Compute MSE and select the best combination ----
+                            # ---- Compute MSE and select the optimal combination ----
                             mse_all <- sapply(ec50_train_pred, function(x) {
                               if (all(is.na(x))) return(NA)
-                              mean((x - ec50_train_true)^2)
+                              mean((x - ec50_train_gs)^2)
                             })
                             
                             best_idx <- which.min(mse_all)
@@ -139,7 +139,7 @@ for (np in n_points_list) {
                             best_ec50 <- ec50_train_pred[[best_idx]]
                             res$best_mse_train <- mse_all[best_idx]
                             
-                            sq_err_train <- (best_ec50 - ec50_train_true)^2
+                            sq_err_train <- (best_ec50 - ec50_train_gs)^2
                             res$best_mse_train_ci_lower <- res$best_mse_train - 1.96 * se(sq_err_train)
                             res$best_mse_train_ci_upper <- res$best_mse_train + 1.96 * se(sq_err_train)
                             
@@ -148,9 +148,9 @@ for (np in n_points_list) {
                             res$best_gmt_train_ci_upper <- res$best_gmt_train + 1.96 * se(best_ec50)
                             
                             # ---- Testing set: individual 5PL (Gold Standard) ----
-                            ec50_test_true <- ec50_idv_pt[test_samples]
+                            ec50_test_gs <- ec50_idv_pt[test_samples]
                             
-                            if (all(is.na(ec50_test_true))) {
+                            if (all(is.na(ec50_test_gs))) {
                               return(res)
                             }
                             
@@ -161,14 +161,14 @@ for (np in n_points_list) {
                             
                             combo_test <- lapply(combo_list, filter_testing)
                             ec50_test_pred <- fit_shared_3pl(combo_test[[best_idx]])
-                            ec50_test_pred <- ec50_test_pred[names(ec50_test_true)]
+                            ec50_test_pred <- ec50_test_pred[names(ec50_test_gs)]
                             
                             # ---- Compute testing set MSE and GMT ----
                             if (all(is.na(ec50_test_pred))) {
                               res$mse_test <- NA
                               res$gmt_test <- NA
                             } else {
-                              sq_err_test <- (ec50_test_pred - ec50_test_true)^2
+                              sq_err_test <- (ec50_test_pred - ec50_test_gs)^2
                               res$mse_test <- mean(sq_err_test, na.rm = TRUE)
                               res$mse_test_ci_lower <- res$mse_test - 1.96 * se(sq_err_test)
                               res$mse_test_ci_upper <- res$mse_test + 1.96 * se(sq_err_test)
@@ -203,13 +203,10 @@ for (np in n_points_list) {
     gmt_test_ci_upper       = sapply(iter_results, function(x) x$gmt_test_ci_upper)
   )
   
-  saveRDS(all_results, file = paste0("all_results_backup_", np, ".rds"))
+  # saveRDS(all_results, file = paste0("all_results_backup_", np, ".rds"))
 }
 
 stopCluster(cl)
 
-total_end_time <- Sys.time()
-print(total_end_time - total_start_time)
-
-# all_results <- readRDS("all_results_backup_n3.rds")
-all_results
+# total_end_time <- Sys.time()
+# print(total_end_time - total_start_time)
