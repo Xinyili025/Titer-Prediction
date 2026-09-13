@@ -5,6 +5,9 @@ library(car)
 library(scales)
 library(writexl)
 library(here)
+library(parallel)
+library(foreach)
+library(doSNOW)
 
 # Set seed for reproducibility
 set.seed(123)
