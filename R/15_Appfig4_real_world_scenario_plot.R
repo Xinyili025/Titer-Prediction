@@ -4,7 +4,7 @@ set.seed(123)
 comb_freq <- table(all_results$n3$best_comb)
 comb_freq_sorted <- sort(comb_freq, decreasing = TRUE)
 
-# select combinations for ploting
+# Select combinations for plotting
 comb_freq_top <- comb_freq_sorted[comb_freq_sorted >= 6]
 
 comb_names <- names(comb_freq_top)
@@ -13,10 +13,6 @@ n_combs <- length(comb_names)
 
 dilutions <- c("40", "160", "640", "2560", "10240", "40960", "163840", "655360")
 
-left_labels <- sapply(comb_names, function(comb_str) {
-  idx <- as.numeric(unlist(strsplit(gsub("c\\(|\\)", "", comb_str), ",")))
-  paste(dilutions[idx], collapse = ", ")
-})
 right_labels <- paste0("N = ", comb_counts)
 
 # Data preparation for Panel B
@@ -36,6 +32,7 @@ rw_testing <- list(
 )
 rw_testing_mse <- round(mse(all_results$n3$gmt_test,gs_logGMT),4)
 
+# Appendix Figure 4
 pdf(file = "Figure 4_real world scenario.pdf", width=11, height=3.3)
 layout(matrix(c(1, 2), nrow = 1), widths = c(1.8, 1))
 par(mar=c(2,2.5,2,2.5), oma=c(0,0,0,0), xpd=TRUE)
