@@ -109,7 +109,7 @@ for (np in n_points_list) {
                             train_pt <- od$pattinson[od$pattinson$Sample %in% train_samples, ]
                             test_pt <- od$pattinson[od$pattinson$Sample %in% test_samples, ]
                             
-                            # ---- Training set: individual 5PL (Gold Standard) ----
+                            # ---- Training set: individual 5PL (Gold-standard) ----
                             ec50_train_gs <- ec50_idv_pt[train_samples]
                             
                             if (all(is.na(ec50_train_gs))) {
