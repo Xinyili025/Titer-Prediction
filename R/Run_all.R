@@ -1,3 +1,8 @@
+# Users should set the working directory
+# Replace this path with the location on your computer
+setwd("/Users/lixinyi/Desktop/Titer-Prediction-main")
+
+# Each R script is sourced in order
 source("R/00_Setup.R")
 source("R/01_Cross_validation.R")
 source("R/02_Gold_standard_models.R")
