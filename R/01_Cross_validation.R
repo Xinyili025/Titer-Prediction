@@ -1,5 +1,3 @@
-source(here::here("R/00_Setup.R"))
-
 # Fraction of samples held out; number of random splits
 holdout_pct = 0.2
 n_iter = 100
