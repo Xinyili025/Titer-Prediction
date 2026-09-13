@@ -31,5 +31,5 @@ Four datasets were analyzed in this study. Three of these were derived from the 
 [2] Pattinson D, Jester P, Guan L, Yamayoshi S, Chiba S, Presler R, et al. A Novel Method to Reduce ELISA Serial Dilution Assay Workload Applied to SARS-CoV-2 and Seasonal HCoVs. Viruses. 2022;14. doi:10.3390/v14030562
 
 ## Contact
-This repository was developed by Xinyi Li. For any enquiries, please contact Xinyi Li (u3012021@connect.hku.hk) or Prof. Ben Cowling (bcowling@hku.hk).
+This repository was developed by Miss Xinyi Li. For any enquiries, please contact Miss Xinyi Li (u3012021@connect.hku.hk) or Prof. Ben Cowling (bcowling@hku.hk).
 
