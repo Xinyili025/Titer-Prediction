@@ -65,6 +65,7 @@ for(i in seq_along(strategies)) {
   }
 }
 
+# logGMT and its 95% CI
 logGMT_fixed_assays_individual <- list(
   logGMT = data.frame(lapply(all_logGMT, function(x) x$logGMT)),
   ci_lower = data.frame(lapply(all_logGMT, function(x) x$logGMT - 1.96 * x$log_se)),
