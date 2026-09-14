@@ -34,3 +34,5 @@ source("R/13_Fig03_assay_capped_scenario.R")
 # Real-world scenario & Appendix Figure 4
 source("R/14_Real_world_scenario.R")
 source("R/15_Appfig04_real_world_scenario.R")
+
+cat("\nAnalysis complete! Check the \"Figures\" folder.\n")
