@@ -58,7 +58,7 @@ panel_position_fig2 <- c(4.3, -0.65, -0.65, -0.65,
                          0.1, -0.65, -0.65, -0.65, 
                          0.4, -0.65, -0.65, -0.65)
 
-pdf(file = "Figure_ap3_Fitted_curves.pdf",width =7.4,height = 7.8)
+pdf(file = "Appfig3_Optimal_combinations.pdf",width = 7.4,height = 7.8)
 par(mfrow=c(4,4))
 par(mar=c(1.8,1,2.5,0.4),oma=c(0,1,0,0),xpd=TRUE)
 
