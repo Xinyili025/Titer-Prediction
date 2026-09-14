@@ -199,7 +199,7 @@ titles <- c("Ancestral virus spike RBD", "Omicron BA.2 full spike", "N-CTD")
 panel_labels1 <- c("A", "C", "E")   
 panel_labels2 <- c("B", "D", "F")   
 
-pdf(file = "Figure 2_Ratio.pdf", width = 8, height = 9)
+pdf(file = "Figures/Figure_2_Ratio.pdf", width = 8, height = 9)
 par(mfrow = c(4, 2),
     mar = c(2.5, 2.8, 2, 3),
     oma = c(0.5, 9, 1, 10.5),
