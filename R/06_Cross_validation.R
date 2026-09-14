@@ -207,6 +207,7 @@ cv_mse_table <- reshape(
   direction = "wide"
 )
 
+# Appendix table 2
 # > cv_mse_table
 # dataset              mse_ci.3PL             mse_ci.4PL             mse_ci.5PL
 # 1  cobovax_ancestral       5.64 (3.16, 8.11)      5.96 (3.34, 8.59)      2.37 (1.05, 3.69)
