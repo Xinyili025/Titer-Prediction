@@ -115,4 +115,8 @@ bounds_list <- list(
   pattinson         = list(b = c(0, 10), c = c(-0.5,0.5), d = c(0.5, 3), e = c(-10,10), f = c(0, 5))
 )
 
+# Create output folders
+if (!dir.exists("Figures")) {
+  dir.create("Figures")
+}
 
