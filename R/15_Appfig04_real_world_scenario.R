@@ -33,7 +33,7 @@ rw_testing <- list(
 rw_testing_mse <- round(mse(all_results$n3$gmt_test,gs_logGMT),4)
 
 # Appendix Figure 4
-pdf(file = "Appfigure 4_Real_world_scenario.pdf", width=11, height=3.3)
+pdf(file = "Figures/Appfigure_4_Real_world_scenario.pdf", width=11, height=3.3)
 layout(matrix(c(1, 2), nrow = 1), widths = c(1.8, 1))
 par(mar=c(2,2.5,2,2.5), oma=c(0,0,0,0), xpd=TRUE)
 
