@@ -42,7 +42,7 @@ figure1_panel <- function(data_source, logdilution, dilution_vector,
   text(labels = text_panel, x = x_panel, y = y_panel, cex = 1.1, font = 2, xpd = NA)
 }
 
-pdf(file = "Figure 1_Fitted_curves_5PL.pdf", width = 8.1, height = 5.75)
+pdf(file = "Figures/Figure_1_Fitted_curves_5PL.pdf", width = 8.1, height = 5.75)
 par(mfrow = c(3, 4))
 par(mar = c(2.1, 2.5, 2, 0.4), oma = c(0, 0, 0, 0), xpd = TRUE)
 
