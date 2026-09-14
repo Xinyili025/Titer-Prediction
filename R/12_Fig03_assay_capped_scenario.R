@@ -84,7 +84,7 @@ figure3_function <- function(GMT_individual,jitter_amounts,x_text,y_text,x_label
   }  
 }
 
-pdf(file = "Figure 3_GMT.pdf",width =3.5,height =3.05)
+pdf(file = "Figure 3_Assay_capped_scenario.pdf",width =3.5,height =3.05)
 par(mfrow=c(1,1))
 par(mar=c(1.5,3,0,0),oma=c(0,0,0,0),xpd=TRUE)
 
