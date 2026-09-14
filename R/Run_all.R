@@ -21,7 +21,7 @@ source("R/06_Cross_validation.R")
 # Optimal combinations & appendix figure 3
 source("R/07_Optimal_combinations.R")
 source("R/08_Optimal_combinations_curves.R")
-source("R/09_Appfig03_optimal_combinations.R")
+source("R/09_Appfig03_optimal_combinations_curves.R")
 
 # Ratio & Figure 2
 source("R/10_Ratio.R")
