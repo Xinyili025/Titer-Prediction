@@ -1,3 +1,5 @@
+set.seed(123)
+
 # Fit shared-parameter models and extract EC50 values
 shared_ec50_model <- function(data,model_pl,model_parameter,bounds) {
   
