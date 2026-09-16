@@ -1,3 +1,5 @@
+set.seed(123)
+
 fit_models <- function(data, best_df, model_pl, model_parameter, bounds) {
   
   dilutions_list <- lapply(best_df$dilutions, function(d) {
