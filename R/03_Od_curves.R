@@ -1,3 +1,5 @@
+set.seed(123)
+
 # Main Figure 1  = shared 5PL 
 # Appendix Fig 1 = shared 4PL
 # Appendix Fig 2 = shared 3PL
