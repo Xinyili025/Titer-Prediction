@@ -1,3 +1,5 @@
+set.seed(123)
+
 # Fraction of samples held out; number of random splits
 holdout_pct = 0.2
 n_iter = 100

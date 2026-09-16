@@ -1,3 +1,5 @@
+set.seed(123)
+
 figure1_panel <- function(data_source, logdilution, dilution_vector, 
                           lines_color, text_x, text_y, text_main, 
                           text_panel, x_panel, y_panel, y_max, 
