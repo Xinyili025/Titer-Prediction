@@ -1,3 +1,5 @@
+set.seed(123)
+
 get_parameter_iqr_base <- function(model_list) {
   all_results <- data.frame()
   

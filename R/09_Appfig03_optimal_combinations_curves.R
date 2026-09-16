@@ -1,3 +1,5 @@
+set.seed(123)
+
 figure_ap3_function <- function(pred,logdilution,dilution_vector,lines_color,text_x,text_y,text_title,x_panel,y_panel,text_panel,x_mse, y_mse,mse,y_max) {
   cex_fig_ap3 <- 0.5
   lwd_fig_ap3 <- 0.6
