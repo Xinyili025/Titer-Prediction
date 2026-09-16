@@ -1,3 +1,5 @@
+set.seed(123)
+
 # Find optimal dilution combination for each number of points (2-5)
 find_optimal_model <- function(ed_shared_list,ec50_idv_full,dilutions_vector) {
   
