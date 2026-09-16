@@ -1,3 +1,5 @@
+set.seed(123)
+
 log4 <- function(x) log(x, base = 4)
 
 # Gold-standard titers at or below -2 are plotted at -2
