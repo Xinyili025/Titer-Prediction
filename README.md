@@ -30,10 +30,10 @@ Four datasets were analyzed in this study. Three of these were derived from the 
 The analysis was conducted using R 4.4.1 and the following packages:
 
 - tidyverse 2.0.0
-- drc 3.0-1
-- car 3.1-3
+- drc 3.0.1
+- car 3.1.3
 - scales 1.4.0
-- writexl 1.5.1
+- writexl 1.5.4
 - foreach 1.5.2
 - doSNOW 1.0.20
 
