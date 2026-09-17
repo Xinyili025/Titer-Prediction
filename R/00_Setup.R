@@ -1,12 +1,12 @@
 # Packages
 library(tidyverse)
 library(drc)
-library(car)
 library(scales)
 library(writexl)
 library(parallel)
 library(foreach)
 library(doSNOW)
+library(car)
 
 # Set seed for reproducibility
 set.seed(123)
