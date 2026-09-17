@@ -25,6 +25,25 @@ Four datasets were analyzed in this study. Three of these were derived from the 
 2. Open `run_all.R` and set `setwd()` to your working directory.
 3. Run `run_all.R` to reproduce the analyses and generate figures.
 
+## Software
+
+The analysis was conducted using:
+
+- **R**: version 4.4.1 (2024-06-14)
+- **RStudio**: 2024.04.2
+
+### Package Versions
+
+| Package | Version |
+| :--- | :--- |
+| tidyverse | 2.0.0 |
+| drc | 3.0-1 |
+| car | 3.1-3 |
+| scales | 1.4.0 |
+| writexl | 1.5.1 |
+| foreach | 1.5.2 |
+| doSNOW | 1.0.20 |
+
 ## References
 [1] Leung NHL, Cheng SMS, Cohen CA, Martín-Sánchez M, Au NYM, Luk LLH, et al. Comparative antibody and cell-mediated immune responses, reactogenicity, and efficacy of homologous and heterologous boosting with CoronaVac and BNT162b2 (Cobovax): an open-label, randomised trial. Lancet Microbe. 2023;4: e670–e682.
 
